@@ -12,7 +12,7 @@
     "deploy": "sh upgrade.sh",
     "image": "yarn package && docker build . -t indqtech/admin-api:latest",
     "format": "prettier --write \"src/**/*.ts\"",
-    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start": "node dist/main.js",
     "start:dev": "nodemon",
     "start:debug": "nodemon --config nodemon-debug.json",
     "prestart:prod": "yarn clean && npm run build",
