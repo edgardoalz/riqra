@@ -75,7 +75,7 @@ export const start = (callback: () => void = noop): void => {
       )
       callback()
     })
-  }).sync({ force: true })
+  }).sync({ force: false })
 }
 
 export default { start }
