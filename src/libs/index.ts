@@ -9,6 +9,7 @@ import jwt from './jwt'
 import pwd from './pwd'
 import file from './file'
 import algolia from './algolia'
+import valid from './valid'
 
 export {
   noop,
@@ -17,6 +18,7 @@ export {
   file,
   algolia,
   logger,
+  valid,
   signal,
   cluster,
   db,
