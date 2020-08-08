@@ -1,7 +1,7 @@
 {
-  "name": "delivery-api",
+  "name": "riqra-api",
   "version": "1.0.0",
-  "description": "Delivery API project",
+  "description": "Riqra project",
   "main": "dist/main.js",
   "author": "Edgardo Alvarez",
   "license": "MIT",
