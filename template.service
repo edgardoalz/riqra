@@ -1,0 +1,17 @@
+[Unit]
+Description=Events API
+After=multi-user.target network.target network-online.target
+
+[Service]
+User=root
+Environment="NODE_ENV=development"
+WorkingDirectory=/opt/events/api
+ExecStart=/usr/bin/node /opt/events/api/index.js
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

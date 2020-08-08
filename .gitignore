@@ -1,0 +1,10 @@
+**/node_modules/
+**/.env*
+**/dist/
+**/*.log
+**/.vscode/
+**/package-lock.json
+**/.logs/
+**/build/
+assets/
+!assets/.gitkeep
