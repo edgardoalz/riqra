@@ -53,12 +53,14 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  playground: true,
+  introspection: false,
   context: ({ req }) => {
     let user: User
     try {
       user = jwt.decode(req.headers.authorization)
     } catch (error) {
-      logger.warn(error)
+      logger.warn('auth', error)
     }
 
     return { user }
