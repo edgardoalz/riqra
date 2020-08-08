@@ -45,7 +45,7 @@ parser.addArgument(['-w', '--workers'], {
 parser.addArgument(['-p', '--port'], {
   help: 'Server port',
   type: 'int',
-  defaultValue: env.NODE_PORT || 3000
+  defaultValue: env.PORT || 3000
 })
 
 parser.addArgument(['-i', '--idLength'], {
