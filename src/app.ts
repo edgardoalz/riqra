@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import { ApolloServer, gql } from 'apollo-server-express'
 import { jwt, noop, args, db, address, logger } from './libs'
 import { user, product } from './resolver'
@@ -65,6 +66,7 @@ const server = new ApolloServer({
 })
 
 const app = express()
+app.use(cors())
 server.applyMiddleware({ app })
 
 export const start = (callback: () => void = noop): void => {
