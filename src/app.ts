@@ -53,8 +53,6 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  playground: true,
-  introspection: false,
   context: ({ req }) => {
     let user: User
     try {
