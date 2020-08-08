@@ -1,14 +1,15 @@
 import { Users } from '../repository'
-import { jwt, pwd } from '../libs'
+import { valid, jwt, pwd } from '../libs'
 import { GraphQLError } from 'graphql'
-import { AuthenticationError } from 'apollo-server-express'
+import { AuthenticationError, ValidationError } from 'apollo-server-express'
 
-/**
- * USERS HANDLERS
- */
 export async function signup(parent: any, args: any): Promise<any> {
   try {
     const { email, password } = args
+
+    if (!valid.isEmail(email)) {
+      return new ValidationError('Invalid email format')
+    }
 
     const userFound = await Users.findByEmail(email)
     if (userFound) {
@@ -32,6 +33,10 @@ export async function signup(parent: any, args: any): Promise<any> {
 
 export async function login(parent: any, args: any): Promise<any> {
   const { email, password } = args
+
+  if (!valid.isEmail(email)) {
+    return new ValidationError('Invalid email format')
+  }
 
   const userFound = await Users.findByEmail(email)
   if (!userFound) {
